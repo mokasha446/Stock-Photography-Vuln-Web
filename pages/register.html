@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romee Sketch Art | Register</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="logo">
+      <img src="../images/Photography/brian-gomes-QKCvdSfVJT8-unsplash.jpg" alt="Romee Sketch logo" width="32" height="32" loading="eager" decoding="async"/>
+      Romee Sketch
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="custom-order.html">Custom Order</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <div class="auth-page">
+    <div class="auth-box">
+      <h2>Create Account</h2>
+      <p class="sub">Join Romee Sketch Art</p>
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="rName" placeholder="Roman Khan"/>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" id="rEmail" placeholder="your@email.com"/>
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" id="rPhone" placeholder="03XX-XXXXXXX"/>
+      </div>
+
+      <!-- VULN: Weak password policy — accepts 1 char -->
+      <div class="form-group">
+        <label>Password
+          <span class="vuln-tag">⚠️ VULN: Weak Password Policy</span>
+        </label>
+        <input type="password" id="rPass" placeholder="Any password accepted — even 1 char"/>
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" id="rPass2" placeholder="Repeat password"/>
+      </div>
+
+      <!-- VULN: Role is hidden but still sent in POST request — attacker can modify via console -->
+      <input type="hidden" id="rRole" value="user"/>
+      <p class="vuln-note" style="margin-bottom:16px;">
+        ⚠️ VULN: Mass Assignment — Role is hidden field. Attacker can change value to "admin" via browser console.
+      </p>
+
+      <button class="btn-buy" onclick="doRegister()">Create Account</button>
+
+      <div id="regMsg" style="margin-top:16px;"></div>
+
+      <p style="color:#888; margin-top:20px; text-align:center; font-size:0.9rem;">
+        Already have account?
+        <a href="login.html" style="color:#fff;">Login here</a>
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Romee Sketch Art | Roman Khan</p>
+  </footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

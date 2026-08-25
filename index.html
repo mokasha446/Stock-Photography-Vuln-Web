@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romee Sketch | Premium Photography</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="images/Photography/brian-gomes-QKCvdSfVJT8-unsplash.jpg" alt="Romee Sketch logo" width="32" height="32" loading="eager" decoding="async"/>
+      Romee Sketch
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/gallery.html">Gallery</a></li>
+      <li><a href="pages/custom-order.html">Custom Order</a></li>
+      <li><a href="pages/login.html">Login</a></li>
+      <li><a href="pages/register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero hero--split">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Real Photography<br/>by Okasha Rajput</h1>
+        <p>Original professional photography & custom portrait orders</p>
+        <a href="pages/gallery.html" class="btn">Browse Gallery</a>
+        <a href="pages/custom-order.html" class="btn-outline">Order Custom Photo</a>
+      </div>
+      <div class="hero-media">
+        <img src="images/Photography/james-foulk-HJF7mZKscMs-unsplash.jpg" alt="Featured portrait photography" class="hero-photo" loading="eager" decoding="async"/>
+        <img src="images/Photography/mika-baumeister-dMqr6M2iDxI-unsplash.jpg" alt="Street photography sample" class="hero-photo hero-photo--secondary" loading="lazy" decoding="async"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED SKETCHES (dynamic) -->
+  <section class="featured">
+    <h2>Featured Photography</h2>
+    <div class="sketch-grid" id="featuredGrid">
+        <a href="pages/detail.html?id=1" style="text-decoration:none; color:inherit;">
+          <div class="sketch-card" data-category="portrait">
+            <div class="sketch-img">
+              <img src="images/Photography/amin-safaripour-RSP3qZrGIBM-unsplash.jpg" alt="City Portrait" loading="lazy" decoding="async"/>
+            </div>
+            <div class="sketch-info">
+              <h3>City Portrait</h3>
+              <p class="artist">by Amin Safaripour</p>
+              <p class="price">View Photo</p>
+              <span class="btn-small">Buy</span>
+            </div>
+          </div>
+        </a>
+        <a href="pages/detail.html?id=2" style="text-decoration:none; color:inherit;">
+          <div class="sketch-card" data-category="closeup">
+            <div class="sketch-img">
+              <img src="images/Photography/andy-holmes-cditmHN3iwM-unsplash.jpg" alt="Morning Light" loading="lazy" decoding="async"/>
+            </div>
+            <div class="sketch-info">
+              <h3>Morning Light</h3>
+              <p class="artist">by Andy Holmes</p>
+              <p class="price">View Photo</p>
+              <span class="btn-small">Buy</span>
+            </div>
+          </div>
+        </a>
+        <a href="pages/detail.html?id=3" style="text-decoration:none; color:inherit;">
+          <div class="sketch-card" data-category="anime">
+            <div class="sketch-img">
+              <img src="images/Photography/artem-tryhub-zidTOw3Iq40-unsplash.jpg" alt="Urban Frame" loading="lazy" decoding="async"/>
+            </div>
+            <div class="sketch-info">
+              <h3>Urban Frame</h3>
+              <p class="artist">by Artem Tryhub</p>
+              <p class="price">View Photo</p>
+              <span class="btn-small">Buy</span>
+            </div>
+          </div>
+        </a>
+        <a href="pages/detail.html?id=4" style="text-decoration:none; color:inherit;">
+          <div class="sketch-card" data-category="portrait">
+            <div class="sketch-img">
+              <img src="images/Photography/brian-gomes-4epjIeLjAj4-unsplash.jpg" alt="Golden Hour" loading="lazy" decoding="async"/>
+            </div>
+            <div class="sketch-info">
+              <h3>Golden Hour</h3>
+              <p class="artist">by Brian Gomes</p>
+              <p class="price">View Photo</p>
+              <span class="btn-small">Buy</span>
+            </div>
+          </div>
+        </a>
+        <a href="pages/detail.html?id=5" style="text-decoration:none; color:inherit;">
+          <div class="sketch-card" data-category="anime">
+            <div class="sketch-img">
+              <img src="images/Photography/brian-gomes-dX8Rt1sdIWw-unsplash.jpg" alt="Street Mood" loading="lazy" decoding="async"/>
+            </div>
+            <div class="sketch-info">
+              <h3>Street Mood</h3>
+              <p class="artist">by Brian Gomes</p>
+              <p class="price">View Photo</p>
+              <span class="btn-small">Buy</span>
+            </div>
+          </div>
+        </a>
+        <a href="pages/detail.html?id=6" style="text-decoration:none; color:inherit;">
+          <div class="sketch-card" data-category="closeup">
+            <div class="sketch-img">
+              <img src="images/Photography/brian-gomes-in-pd-MQ0E0-unsplash.jpg" alt="Quiet Moment" loading="lazy" decoding="async"/>
+            </div>
+            <div class="sketch-info">
+              <h3>Quiet Moment</h3>
+              <p class="artist">by Brian Gomes</p>
+              <p class="price">View Photo</p>
+              <span class="btn-small">Buy</span>
+            </div>
+          </div>
+        </a>
+    </div>
+  </section>
+
+  <!-- CUSTOM ORDER BANNER -->
+  <section class="custom-banner">
+    <h2>Want a Custom Photo?</h2>
+    <p>Send us your requirements – we capture professional photography</p>
+    <a href="pages/custom-order.html" class="btn">Order Now</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Romee Sketch | Okasha Rajput | Karachi, Pakistan</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Romee Sketch Art | Admin</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="logo">
+      <img src="../images/Photography/brian-gomes-QKCvdSfVJT8-unsplash.jpg" alt="Romee Sketch logo" width="32" height="32" loading="eager" decoding="async"/>
+      Romee Sketch
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="custom-order.html">Custom Order</a></li>
+      <li><a href="#" onclick="doLogout()">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="admin-container">
+    <h1 style="color:#fff; margin-bottom:32px;">Admin Panel</h1>
+
+    <!-- Stats -->
+    <div class="admin-stats">
+      <div class="admin-stat" onclick="scrollToSection('ordersSection')" style="cursor:pointer;" title="Go to Orders">
+        <h3 id="totalOrders">0</h3>
+        <p>Total Orders</p>
+      </div>
+      <div class="admin-stat" onclick="scrollToSection('ordersSection')" style="cursor:pointer;" title="Go to Orders">
+        <h3 id="totalRevenue">PKR 0</h3>
+        <p>Total Revenue</p>
+      </div>
+      <div class="admin-stat" onclick="scrollToSection('usersSection')" style="cursor:pointer;" title="Go to Users">
+        <h3 id="totalUsers">0</h3>
+        <p>Registered Users</p>
+      </div>
+      <div class="admin-stat" onclick="scrollToSection('sketchesSection')" style="cursor:pointer;"
+        title="Go to Sketches">
+        <h3 id="totalSketches">0</h3>
+        <p>Sketches Listed</p>
+      </div>
+    </div>
+
+    <!-- Users Table -->
+    <div class="admin-section" id="usersSection">
+      <h2>All Users <span class="vuln-tag">⚠️ VULN: Sensitive Data Exposure</span></h2>
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="adminUsersBody">
+          <tr>
+            <td colspan="5">Loading...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Orders Table -->
+    <div class="admin-section" id="ordersSection">
+      <h2>All Orders</h2>
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Buyer</th>
+            <th>Plan/Sketch</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="adminOrdersBody">
+          <tr>
+            <td colspan="6">Loading...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Add Sketch -->
+    <div class="admin-section" id="addSketchSection">
+      <h2>Add New Sketch</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin-bottom:20px;">
+        <div class="form-group"><label>Title</label><input type="text" id="newSketchTitle" placeholder="Sketch title" />
+        </div>
+        <div class="form-group"><label>Price (PKR)</label><input type="number" id="newSketchPrice" placeholder="1500" />
+        </div>
+        <div class="form-group"><label>Artist</label><input type="text" id="newSketchArtist" placeholder="Romee" />
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select id="newSketchCategory">
+            <option value="portrait">Portrait</option>
+            <option value="anime">Anime Art</option>
+            <option value="closeup">Close-Up Sketch</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Upload Sketch Image</label><input type="file" id="newSketchImage" /></div>
+        <div class="form-group"><label>Reference / Step 1 Image <span
+              style="color:#aaa; font-size:0.75rem;">(Optional)</span></label><input type="file" id="newSketchExtra1" />
+        </div>
+        <div class="form-group"><label>Reference / Step 2 Image <span
+              style="color:#aaa; font-size:0.75rem;">(Optional)</span></label><input type="file" id="newSketchExtra2" />
+        </div>
+      </div>
+      <button class="btn-buy" style="max-width:200px;" onclick="addSketch()">Add Sketch</button>
+      <div id="addSketchMsg" style="margin-top:12px;"></div>
+    </div>
+
+    <!-- All Sketches -->
+    <div class="admin-section" id="sketchesSection">
+      <h2>All Sketches</h2>
+      <table class="dash-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Image</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="adminSketchesBody">
+          <tr>
+            <td colspan="7">Loading...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Romee Sketch Art | Roman Khan</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romee Sketch Art | Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="logo">
+      <img src="../images/Photography/brian-gomes-QKCvdSfVJT8-unsplash.jpg" alt="Romee Sketch logo" width="32" height="32" loading="eager" decoding="async"/>
+      Romee Sketch
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="custom-order.html">Custom Order</a></li>
+      <li><a href="#" onclick="doLogout()">Logout</a></li>
+    </ul>
+  </nav>
+
+  <div class="dashboard-container">
+    <div class="dash-header">
+      <h1>My Dashboard</h1>
+      <p id="welcomeMsg">Welcome back!</p>
+    </div>
+
+    <!-- My Orders -->
+    <div class="dash-section">
+      <h2>My Orders</h2>
+      <table class="dash-table">
+        <thead>
+          <tr><th>Order ID</th><th>Plan/Sketch</th><th>Amount</th><th>Status</th><th>Action</th></tr>
+        </thead>
+        <tbody id="ordersTableBody">
+          <tr><td colspan="5" style="color:#aaa;">Loading orders...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Account Details -->
+    <div class="dash-section">
+      <h2>Account Details <span class="vuln-tag">⚠️ VULN: Information Disclosure</span></h2>
+      <div class="info-box">
+        <p><strong>Email:</strong> <span id="dashEmail">loading...</span></p>
+        <p><strong>Role:</strong> <span id="dashRole">loading...</span></p>
+        <p><strong>Session Token:</strong> <span id="dashToken">loading...</span></p>
+      </div>
+    </div>
+
+    <!-- Change Password -->
+    <div class="dash-section" style="text-align:center;">
+      <a href="change-password.html" class="btn-outline">ðŸ”’ Change Password</a>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Romee Sketch Art | Roman Khan</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
