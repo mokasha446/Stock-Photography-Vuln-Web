@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Romee Sketch Art | Admin</title>
+  <title>Stock Photography | Admin</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
   <nav class="navbar">
     <a href="../index.html" class="logo">
       <img src="../images/Photography/brian-gomes-QKCvdSfVJT8-unsplash.jpg" alt="Romee Sketch logo" width="32" height="32" loading="eager" decoding="async"/>
-      Romee Sketch
+      Stock Photography
     </a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
@@ -79,7 +79,7 @@
           <tr>
             <th>Order ID</th>
             <th>Buyer</th>
-            <th>Plan/Sketch</th>
+            <th>Plan/Photography</th>
             <th>Amount</th>
             <th>Status</th>
             <th>Action</th>
@@ -95,9 +95,9 @@
 
     <!-- Add Sketch -->
     <div class="admin-section" id="addSketchSection">
-      <h2>Add New Sketch</h2>
+      <h2>Add New Photography</h2>
       <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin-bottom:20px;">
-        <div class="form-group"><label>Title</label><input type="text" id="newSketchTitle" placeholder="Sketch title" />
+        <div class="form-group"><label>Title</label><input type="text" id="newSketchTitle" placeholder="Photography title" />
         </div>
         <div class="form-group"><label>Price (PKR)</label><input type="number" id="newSketchPrice" placeholder="1500" />
         </div>
@@ -108,10 +108,10 @@
           <select id="newSketchCategory">
             <option value="portrait">Portrait</option>
             <option value="anime">Anime Art</option>
-            <option value="closeup">Close-Up Sketch</option>
+            <option value="closeup">Close-Up Photography</option>
           </select>
         </div>
-        <div class="form-group"><label>Upload Sketch Image</label><input type="file" id="newSketchImage" /></div>
+        <div class="form-group"><label>Upload Photography Image</label><input type="file" id="newSketchImage" /></div>
         <div class="form-group"><label>Reference / Step 1 Image <span
               style="color:#aaa; font-size:0.75rem;">(Optional)</span></label><input type="file" id="newSketchExtra1" />
         </div>
@@ -119,7 +119,7 @@
               style="color:#aaa; font-size:0.75rem;">(Optional)</span></label><input type="file" id="newSketchExtra2" />
         </div>
       </div>
-      <button class="btn-buy" style="max-width:200px;" onclick="addSketch()">Add Sketch</button>
+      <button class="btn-buy" style="max-width:200px;" onclick="addSketch()">Add Photography</button>
       <div id="addSketchMsg" style="margin-top:12px;"></div>
     </div>
 
@@ -149,7 +149,7 @@
   </div>
 
   <footer class="footer">
-    <p>© 2026 Romee Sketch Art | Roman Khan</p>
+    <p>© 2026 Stock Photography | Okasha Rajput</p>
   </footer>
 
   <script src="../js/main.js"></script>
