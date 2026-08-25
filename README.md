@@ -69,8 +69,8 @@ git clone https://github.com/mokasha446/final-vuln-web.git
 ```
 
 **Test Credentials:**
-- Admin: `admin@romee.com` / `admin123`
-- User: `user@romee.com` / `1234`
+- Admin: `admin@okasha.com` / `admin123`
+- User: `user@okasha.com` / `1234`
 
 ## 🎯 Try These Attacks
 
