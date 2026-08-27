@@ -14,7 +14,6 @@
 
   <nav class="navbar">
     <a href="../index.html" class="logo">
-      <img src="../images/Photography/brian-gomes-QKCvdSfVJT8-unsplash.jpg" alt="Romee Sketch logo" width="32" height="32" loading="eager" decoding="async"/>
       Stock Photography
     </a>
     <ul class="nav-links">
@@ -45,12 +44,12 @@
         <input type="text" id="rPhone" placeholder="03XX-XXXXXXX"/>
       </div>
 
-      <!-- VULN: Weak password policy — accepts 1 char -->
+      <!-- VULN: Weak password policy ï¿½ accepts 1 char -->
       <div class="form-group">
         <label>Password
           <span class="vuln-tag">?? VULN: Weak Password Policy</span>
         </label>
-        <input type="password" id="rPass" placeholder="Any password accepted — even 1 char"/>
+        <input type="password" id="rPass" placeholder="Any password accepted ï¿½ even 1 char"/>
       </div>
 
       <div class="form-group">
@@ -58,10 +57,10 @@
         <input type="password" id="rPass2" placeholder="Repeat password"/>
       </div>
 
-      <!-- VULN: Role is hidden but still sent in POST request — attacker can modify via console -->
+      <!-- VULN: Role is hidden but still sent in POST request ï¿½ attacker can modify via console -->
       <input type="hidden" id="rRole" value="user"/>
       <p class="vuln-note" style="margin-bottom:16px;">
-        ?? VULN: Mass Assignment — Role is hidden field. Attacker can change value to "admin" via browser console.
+        ?? VULN: Mass Assignment ï¿½ Role is hidden field. Attacker can change value to "admin" via browser console.
       </p>
 
       <button class="btn-buy" onclick="doRegister()">Create Account</button>
@@ -76,7 +75,7 @@
   </div>
 
   <footer class="footer">
-    <p>© 2026 Stock Photography | Okasha Rajput</p>
+    <p>ï¿½ 2026 Stock Photography | Okasha Rajput</p>
   </footer>
 
 <script src="../js/main.js" defer></script>
