@@ -1235,6 +1235,7 @@ img {
 
 /* ---------- GLOBAL RESPONSIVE ---------- */
 @media (max-width: 768px) {
+
   .navbar {
     padding: 1rem 1.5rem;
     flex-direction: column;
@@ -1500,3 +1501,48 @@ img {
     right: 0.5rem;
   }
 }
+
+/* ========== PERFORMANCE OPTIMIZATIONS ========== */
+/* Render below-the-fold blocks lazily: skips layout/paint work until scrolled
+   into view. Improves first render speed and INP. Safe — content still renders. */
+.featured,
+.gallery-section,
+.custom-banner,
+.dash-section,
+.admin-section,
+.admin-stats {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+
+.footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 120px;
+}
+
+/* Reserve stable aspects -> prevent layout shift (CLS) while images decode */
+.hero-photo {
+  aspect-ratio: 3 / 2;
+}
+.hero-photo--secondary {
+  aspect-ratio: 3 / 4;
+}
+.gallery-single {
+  aspect-ratio: 3 / 2;
+}
+.sketch-img {
+  aspect-ratio: 4 / 3;
+}
+
+/* Keep document scrolling smooth with zooms/transforms on cards only */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

@@ -4,6 +4,9 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stock Photography | Detail</title>
+  <meta name="theme-color" content="#0f172a"/>
+  <link rel="preload" as="image" fetchpriority="high"
+        href="../images/Photography/james-foulk-HJF7mZKscMs-unsplash.jpg"/>
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +31,7 @@
   <div class="detail-container">
     <div class="detail-image">
       <div id="sketchGallery">
-        <img src="../images/Photography/james-foulk-HJF7mZKscMs-unsplash.jpg" alt="Photography preview" class="gallery-single" loading="eager" decoding="async"/>
+        <img src="../images/Photography/james-foulk-HJF7mZKscMs-unsplash.jpg" alt="Photography preview" class="gallery-single" fetchpriority="high" width="1200" height="800" decoding="async"/>
       </div>
     </div>
 
@@ -79,6 +82,6 @@
     <p>© 2026 Stock Photography | Okasha Rajput</p>
   </footer>
 
-<script src="../js/main.js"></script>
+<script src="../js/main.js" defer></script>
 </body>
 </html>

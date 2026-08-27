@@ -4,10 +4,20 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stock Photography | Premium Photography</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta name="theme-color" content="#0f172a"/>
+
+  <!-- Preload the LCP (hero) image so it downloads immediately -->
+  <link rel="preload" as="image" fetchpriority="high"
+        href="images/Photography/james-foulk-HJF7mZKscMs-unsplash.jpg"/>
+
+  <!-- Preload critical font (Inter) for faster first paint -->
+  <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"/>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
@@ -35,8 +45,8 @@
         <a href="pages/custom-order.html" class="btn-outline">Order Custom Photo</a>
       </div>
       <div class="hero-media">
-        <img src="images/Photography/james-foulk-HJF7mZKscMs-unsplash.jpg" alt="Featured portrait photography" class="hero-photo" loading="eager" decoding="async"/>
-        <img src="images/Photography/mika-baumeister-dMqr6M2iDxI-unsplash.jpg" alt="Street photography sample" class="hero-photo hero-photo--secondary" loading="lazy" decoding="async"/>
+        <img src="images/Photography/james-foulk-HJF7mZKscMs-unsplash.jpg" alt="Featured portrait photography" class="hero-photo" fetchpriority="high" width="1200" height="800" decoding="async"/>
+        <img src="images/Photography/mika-baumeister-dMqr6M2iDxI-unsplash.jpg" alt="Street photography sample" class="hero-photo hero-photo--secondary" loading="lazy" width="540" height="700" decoding="async"/>
       </div>
     </div>
   </section>
@@ -138,6 +148,6 @@
     <p>© 2026 Okasha Rajput | Karachi, Pakistan</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

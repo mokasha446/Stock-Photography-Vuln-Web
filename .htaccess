@@ -1,0 +1,108 @@
+# ============================================================================
+#  Stock Photography — Frontend Performance .htaccess
+#  Apply ONLY after confirming your server runs Apache with the modules noted.
+#  See implementation guide. If a directive 500s, comment it out and retest.
+# ============================================================================
+
+# ---------------------------------------------------------------
+# 0) MODULE REQUIREMENTS — verify these are enabled:
+#    mod_headers, mod_expires, mod_deflate, mod_rewrite, mod_setenvif
+#    (Brotli: mod_brotli  — optional, fallback to mod_deflate/gzip)
+# ---------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+</IfModule>
+
+# ============================================================================
+# 1) BROWSER CACHING (Leverage Browser Cache / Cache-Control)
+#    Version themed assets (e.g. style.min.css?v=2) when you change them so
+#    returning visitors get fresh copies without stale-cache issues.
+# ============================================================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Default: 0 (immediate) — so HTML is never leaked stale
+    ExpiresDefault "access plus 0 seconds"
+
+    # Static assets — cache for 1 year (they are content-hashed/versioned)
+    ExpiresByType image/jpeg      "access plus 1 year"
+    ExpiresByType image/webp      "access plus 1 year"
+    ExpiresByType image/png       "access plus 1 year"
+    ExpiresByType image/gif       "access plus 1 year"
+    ExpiresByType image/svg+xml   "access plus 1 year"
+    ExpiresByType text/css        "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    ExpiresByType font/woff2      "access plus 1 year"
+    ExpiresByType font/woff       "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+    # HTML / dynamic responses: NO caching (fresh each visit)
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    </FilesMatch>
+
+    # Images + fonts: long-lived cache with revalidation
+    <FilesMatch "\.(jpe?g|png|gif|webp|svg|ico|woff2?|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # CSS/JS: cache 1 year BUT allow revalidation when the file is replaced
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=31536000, must-revalidate"
+    </FilesMatch>
+
+    # --- Security headers (harmless, improve SEO/trust) ---
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ============================================================================
+# 2) COMPRESSION — Brotli (preferred) with Gzip fallback
+#    NOTE: Enable Brotli FIRST in your Apache config order so it takes priority.
+# ============================================================================
+
+# Brotli (Apache 2.4.26+, mod_brotli) — sends .br only if client supports it
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css \
+        application/javascript application/x-javascript application/json \
+        image/svg+xml application/xml text/xml
+    SetEnvIfNoCase Request_URI \.(gif|jpe?g|png|webp)$ no-brotli
+    Header append Vary: Accept-Encoding
+</IfModule>
+
+# Gzip / Deflate (universal fallback)
+<IfModule mod_deflate.c>
+    # Optimise known file types
+    AddOutputFilterByType DEFLATE text/html text/plain text/css \
+        application/javascript application/x-javascript application/json \
+        text/xml application/xml image/svg+xml
+
+    # Remove browser bugs causing performance issues
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary: Accept-Encoding
+</IfModule>
+
+# ============================================================================
+# 3) WEBP AUTO-SERVING (OPTIONAL — uncomment after you generate .webp files)
+#    If the browser supports WebP and a .webp twin exists next to the .jpg,
+#    serve the WebP automatically. No HTML change required.
+#    IMPORTANT: requires mod_rewrite + mod_headers + mod_setenvif.
+# ============================================================================
+#<IfModule mod_rewrite.c>
+#    RewriteCond %{HTTP_ACCEPT} image/webp
+#    RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+#    RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=REQUEST_image]
+#    Header append Vary Accept env=REQUEST_image
+#</IfModule>
+
+# ============================================================================
+# 4) HTTP/2 — server-level, but these inline sets are harmless:
+#    Confirm with host: HTTP/2 + h2c are ENABLED (set in httpd.conf / panel).
+# ============================================================================
