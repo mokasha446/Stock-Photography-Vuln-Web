@@ -1,4 +1,4 @@
-# 🎨 ART
+# 🎨 Stock Photography
 
 A deliberately vulnerable pencil sketch e-commerce web application built for cybersecurity assignment demonstrating 30+ real-world vulnerabilities.
 
@@ -7,7 +7,6 @@ A deliberately vulnerable pencil sketch e-commerce web application built for cyb
 - **Backend:** PHP 8
 - **Database:** MySQL (MariaDB)
 - **Hosting:** InfinityFree
-- **Lines of Code:** 2,690+
 
 ## 📌 Features
 - 🛒 Buy sketches & custom order with pricing plans
@@ -17,7 +16,7 @@ A deliberately vulnerable pencil sketch e-commerce web application built for cyb
 - 📱 Fully responsive dark theme
 - 🔒 Change password functionality
 
-## ⚠️ Vulnerabilities Demonstrated (30+)
+## ⚠️ Vulnerabilities Demonstrated (15+)
 
 | Category | Vulnerability |
 |----------|--------------|
@@ -117,7 +116,7 @@ romee-sketch/
     └── ... (14 files total)
 ```
 
-## 🏴‍☠️ Vulnerability Count: 30+
+## 🏴‍☠️ Vulnerability Count: 15+
 
 Too many to list. Check the code comments — every `VULN:` tag is intentional.
 
@@ -126,7 +125,3 @@ Too many to list. Check the code comments — every `VULN:` tag is intentional.
 **Okasha Rajput**
 - 💻 I break web applications (ethically)
 - 🎓 Cybersecurity Student
-
-## ⚠️ Disclaimer
-
-This project is **intentionally vulnerable** for educational purposes. Do NOT use this code in production. I know exactly what's broken and where. Built for a cybersecurity assignment — hack away, professor.
