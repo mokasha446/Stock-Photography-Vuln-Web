@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Stock Photography | Register</title>
-  <meta name="theme-color" content="#0f172a"/>
+  <meta name="theme-color" content="#0e0e0e"/>
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -45,12 +45,12 @@
         <input type="text" id="rPhone" placeholder="03XX-XXXXXXX"/>
       </div>
 
-      <!-- VULN: Weak password policy — accepts 1 char -->
+      <!-- VULN: Weak password policy � accepts 1 char -->
       <div class="form-group">
         <label>Password
-          <span class="vuln-tag">⚠️ VULN: Weak Password Policy</span>
+          <span class="vuln-tag">?? VULN: Weak Password Policy</span>
         </label>
-        <input type="password" id="rPass" placeholder="Any password accepted — even 1 char"/>
+        <input type="password" id="rPass" placeholder="Any password accepted � even 1 char"/>
       </div>
 
       <div class="form-group">
@@ -58,10 +58,10 @@
         <input type="password" id="rPass2" placeholder="Repeat password"/>
       </div>
 
-      <!-- VULN: Role is hidden but still sent in POST request — attacker can modify via console -->
+      <!-- VULN: Role is hidden but still sent in POST request � attacker can modify via console -->
       <input type="hidden" id="rRole" value="user"/>
       <p class="vuln-note" style="margin-bottom:16px;">
-        ⚠️ VULN: Mass Assignment — Role is hidden field. Attacker can change value to "admin" via browser console.
+        ?? VULN: Mass Assignment � Role is hidden field. Attacker can change value to "admin" via browser console.
       </p>
 
       <button class="btn-buy" onclick="doRegister()">Create Account</button>
@@ -76,7 +76,7 @@
   </div>
 
   <footer class="footer">
-    <p>© 2026 Stock Photography | Okasha Rajput</p>
+    <p>� 2026 Stock Photography | Okasha Rajput</p>
   </footer>
 
 <script src="../js/main.js" defer></script>
