@@ -1,6 +1,6 @@
 # 🎨 Stock Photography
 
-A deliberately vulnerable pencil sketch e-commerce web application built for cybersecurity assignment demonstrating 30+ real-world vulnerabilities.
+A deliberately vulnerable pencil sketch e-commerce web application built for cybersecurity assignment demonstrating 15+ real-world vulnerabilities.
 
 ## 🛠 Tech Stack
 - **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
